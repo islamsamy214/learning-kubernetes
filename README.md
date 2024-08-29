@@ -44,6 +44,8 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A node contains the pods that run the applications.
 - A node can be created through a command: `` kubectl create node <node-name> ``
 - A node can be deleted through a command: `` kubectl delete node <node-name> ``
+- A node can be accessed through a command: `` kubectl get node <node-name> ``
+- A node can be detailed accessed through a command: `` kubectl describe node <node-name> ``
 - A node can be accessed through a service.
 
 ### Pods
@@ -53,6 +55,8 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A pod can be created through a command: `` kubectl run nginx --image=nginx ``
 - A pod can be deleted through a command: `` kubectl delete pod <pod-name> ``
 - A pod can be created or updated through a yaml file: `` kubectl apply -f pod.yaml ``
+- A pod can be accessed through a command: `` kubectl get pod <pod-name> ``
+- A pod can be detailed accessed through a command: `` kubectl describe pod <pod-name> ``
 - A pod can be accessed through a service.
 
 ### Replica Sets
@@ -60,6 +64,8 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A replica set can be created or updated through a yaml file: `` kubectl apply -f replicaset.yaml ``
 - A replica set can be deleted through a command: `` kubectl delete replicaset <replicaset-name> ``
 - A replica set can be accessed through a service.
+- A replica set can be accessed through a command: `` kubectl get replicaset <replicaset-name> ``
+- A replica set can be detailed through a command: `` kubectl describe replicaset <replicaset-name> ``
 - A replica set can be scaled up or down through a command: `` kubectl scale replicaset <replicaset-name> --replicas=3 ``
 - A replica set can be rolled back through a command: `` kubectl rollout undo replicaset <replicaset-name> ``
 - A replica set can be rolled out through a command: `` kubectl rollout status replicaset <replicaset-name> ``
@@ -77,6 +83,8 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A deployment can be created or updated through a yaml file: `` kubectl apply -f deployment.yaml ``
 - A deployment can be deleted through a command: `` kubectl delete deployment <deployment-name> ``
 - A deployment can be accessed through a service.
+- A deployment can be accessed through a command: `` kubectl get deployment <deployment-name> ``
+- A deployment can be detailed through a command: `` kubectl describe deployment <deployment-name> ``
 - A deployment can be scaled up or down through a command: `` kubectl scale deployment <deployment-name> --replicas=3 ``
 - A deployment can be rolled back through a command: `` kubectl rollout undo deployment <deployment-name> ``
 - A deployment can be rolled out through a command: `` kubectl rollout status deployment <deployment-name> ``
