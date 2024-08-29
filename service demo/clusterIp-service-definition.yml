@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  type: ClusterIP # default type if u didnt declare it!
+  selector:
+    app: myapp
+    tier: frontend
+  ports:
+  # u can match multible port with the same service
+  - port: 80 # the trageted port (it has to be targeting the port which u want to expose)
+    targetPort: 80 # simply this is the service object port (from the node)(usually it will be the same as port)
+    name: myapp
+
+  - port: 8080
+    targetPort: 8080
+    name: myapp2
