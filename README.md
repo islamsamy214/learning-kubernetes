@@ -116,3 +116,13 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - NodePort: It is used to expose a service on a specific port on each node. // mapping the port of the service to the port of the node like 30001:80
 - ClusterIP: It is used to expose a service on a cluster-internal IP.
 - LoadBalancer: It is used to expose a service externally using a cloud provider's load balancer.
+
+### Services
+- A service is used to expose an application running in a pod.
+- A service can be created or updated through a yaml file: `` kubectl apply -f service.yaml ``  
+- A service can be created or updated through a command: `` kubectl expose deployment <deployment-name> --type=NodePort --port=80 --target-port=80 ``
+- A service can be deleted through a command: `` kubectl delete service <service-name> ``
+- A service can be accessed through a node port, a cluster IP, or a load balancer.
+- A service can be accessed through a command: `` kubectl get service <service-name> `` or `` kubectl get svc <service-name> ``
+- A service can be accessed through a command: `` kubectl describe service <service-name> `` or `` kubectl describe svc <service-name> ``
+- A service can be accessed through a command: `` kubectl get endpoints <service-name> `` or `` kubectl get ep <service-name> ``
