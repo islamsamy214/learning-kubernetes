@@ -8,7 +8,7 @@ spec:
     app: myapp
     tier: frontend
   ports:
-  # u can match multible port with the same service
+  # u can match multible port with the same service (End Point)
   - port: 80 # the trageted port (it has to be targeting the port which u want to expose)
     targetPort: 80 # simply this is the service object port (from the node)(usually it will be the same as port)
     name: myapp
