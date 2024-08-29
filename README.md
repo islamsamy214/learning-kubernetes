@@ -110,3 +110,9 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A replication controller can be deleted through a command: `` kubectl delete replicationcontroller <replicationcontroller-name> ``
 - A replication controller can be accessed through a service.
 - A replication controller can be scaled up or down through a command: `` kubectl scale replicationcontroller <replicationcontroller-name> --replicas=3 ``
+
+### Networking
+#### Kubernetes networking has three network services:
+- NodePort: It is used to expose a service on a specific port on each node. // mapping the port of the service to the port of the node like 30001:80
+- ClusterIP: It is used to expose a service on a cluster-internal IP.
+- LoadBalancer: It is used to expose a service externally using a cloud provider's load balancer.
