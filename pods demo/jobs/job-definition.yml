@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  ttlSecondsAfterFinished: 100
+  # add multible pods to run the same job one after another, it will always make a new pods untill the desired number of completions is achieved
+  completions: 3
+  # what if i want it in parallel ?
+  parallelism: 3
+  template:
+    spec:
+      containers:
+        - name: job-app
+          image: ubuntu
+          # thats is the job
+          command: ["expr", "3", "+", "2"]
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      restartPolicy: Never
