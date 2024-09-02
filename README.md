@@ -59,6 +59,25 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A pod can be detailed accessed through a command: `` kubectl describe pod <pod-name> ``
 - A pod can be accessed through a service.
 
+### Labels and Selectors
+- Labels are key-value pairs that are attached to objects.
+- Selectors are used to select objects based on labels.
+- You can multi match labels with selectors as based on "AND" or "OR" operators in the selector.
+- Labels are used to select objects.
+- Labels can be added to an object through a yaml file: `` kubectl apply -f object.yaml ``
+- Labels can be added to an object through a command: `` kubectl label object <object-name> <key>=<value> ``
+- Labels can be removed from an object through a command: `` kubectl label object <object-name> <key>- ``
+- Labels can be showed through a command: `` kubectl get object --show-labels ``
+- Labels can be selected through a command: `` kubectl get object -l <key>=<value> `` or `` kubectl get object --selector=<key>=<value> ``
+
+### Annotations
+- Annotations are key-value pairs that are attached to objects, its used as informative data.
+- Annotations are used to attach metadata to objects.
+- Annotations can be added to an object through a yaml file: `` kubectl apply -f object.yaml ``
+- Annotations can be added to an object through a command: `` kubectl annotate object <object-name> <key>=<value> ``
+- Annotations can be removed from an object through a command: `` kubectl annotate object <object-name> <key>- ``
+- Annotations can be showed through a command: `` kubectl get object --show-annotations ``
+
 ### Replica Sets
 - A replica set is used to create and manage pods.
 - A replica set can be created or updated through a yaml file: `` kubectl apply -f replicaset.yaml ``
