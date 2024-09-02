@@ -59,6 +59,24 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A pod can be detailed accessed through a command: `` kubectl describe pod <pod-name> ``
 - A pod can be accessed through a service.
 
+### Jobs
+- A job is used to run a task to completion.
+- A job can be ran once or multiple times, and it can be parallel or sequential.
+- A job can be created or updated through a yaml file: `` kubectl apply -f job.yaml ``
+- A job can be deleted through a command: `` kubectl delete job <job-name> ``
+- A job can be accessed through a command: `` kubectl get job <job-name> ``
+- A job can be detailed through a command: `` kubectl describe job <job-name> ``
+
+### Cron Jobs
+- A cron job is used to run a job at a specific time or interval.
+- A cron job can be created or updated through a yaml file: `` kubectl apply -f cronjob.yaml ``
+- A cron job can be deleted through a command: `` kubectl delete cronjob <cronjob-name> ``
+- A cron job can be accessed through a command: `` kubectl get cronjob <cronjob-name> ``
+- A cron job can be detailed through a command: `` kubectl describe cronjob <cronjob-name> ``
+- A cron job can be paused through a command: `` kubectl patch cronjob <cronjob-name> -p '{"spec": {"suspend": true}}' ``
+- A cron job can be resumed through a command: `` kubectl patch cronjob <cronjob-name> -p '{"spec": {"suspend": false}}' ``
+- A cron job can be forced through a command: `` kubectl create job --from=cronjob/<cronjob-name> <job-name> ``
+
 ### Labels and Selectors
 - Labels are key-value pairs that are attached to objects.
 - Selectors are used to select objects based on labels.
