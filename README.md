@@ -96,6 +96,18 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - Annotations can be removed from an object through a command: `` kubectl annotate object <object-name> <key>- ``
 - Annotations can be showed through a command: `` kubectl get object --show-annotations ``
 
+### Namespaces
+- Namespaces are used to organize objects in a cluster.
+- When accesss some service through a this convention: `` SERVICE_NAME.NAMESPACE_NAME.svc.cluster.local ``
+- Namespaces can be created through a yaml file: `` kubectl apply -f namespace.yaml ``
+- Namespaces can be created through a command: `` kubectl create namespace <namespace-name> ``
+- Namespaces can be attached to an object through a command with the flag `` --namespace=<namespace-name> `` or `` -n <namespace-name> `` like `` kubectl apply -f object.yaml --namespace=<namespace-name> ``
+- Namespaces can be deleted through a command: `` kubectl delete namespace <namespace-name> ``
+- Namespaces can be accessed through a command: `` kubectl get namespace <namespace-name> ``
+- Namespaces can be detailed through a command: `` kubectl describe namespace <namespace-name> ``
+- Namespaces can be accessed through a command: `` kubectl get all --namespace=<namespace-name> `` or `` kubectl get all -n <namespace-name> ``
+- Namespaces can be set as default through a command: `` kubectl config set-context --current --namespace=<namespace-name> ``
+
 ### Replica Sets
 - A replica set is used to create and manage pods.
 - A replica set can be created or updated through a yaml file: `` kubectl apply -f replicaset.yaml ``
