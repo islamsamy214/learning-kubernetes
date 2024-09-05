@@ -3,6 +3,22 @@
 ## Install kubectl
 `` sudo apt-get install -y kubectl ``
 
+## Architecture
+- Kubernetes is a container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+- Kubernetes consists of a master node and worker nodes where the master node is responsible for managing the cluster and the worker nodes are responsible for running the applications.
+- The master node consists of the following components:
+  - API Server: It is the entry point for all the REST commands used to interact with the cluster.
+  - etcd: It is a distributed key-value store used to store the cluster data.
+  - Scheduler: It is responsible for distributing the workload.
+  - Controller Manager: It is responsible for regulating the state of the cluster.
+  - kubelet: It is responsible for communication between the master node and the worker nodes.
+  - kube-proxy: It is responsible for maintaining the network rules.
+- The worker nodes consist of the following components:
+    - kubelet: It is responsible for communication between the master node and the worker nodes.
+    - kube-proxy: It is responsible for maintaining the network rules.
+    - Container Runtime: It is responsible for running the containers.
+![Kubernetes Architecture](https://github.com/islamsamy214/learning-kubernetes/blob/master/kubernetes-arch.png
+
 ## Install docker
 `` sudo apt-get install -y docker.io ``
 
