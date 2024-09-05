@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper
+  labels:
+    name: ubuntu-sleeper
+spec:
+  containers:
+    - name: ubuntu-sleeper
+      image: ubuntu
+      command: ["/bin/sh", "-c"]
+      args: ["echo 'sleeping for 10 seconds' && sleep 10"]
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
