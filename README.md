@@ -17,6 +17,16 @@
     - kubelet: It is responsible for communication between the master node and the worker nodes.
     - kube-proxy: It is responsible for maintaining the network rules.
     - Container Runtime: It is responsible for running the containers.
+- Kubernetes uses a declarative model where the desired state of the cluster is defined in a yaml file and Kubernetes ensures that the actual state of the cluster matches the desired state.
+- Kubernetes uses labels and selectors to select objects in the cluster.
+- Kubernetes uses namespaces to organize objects in the cluster.
+- Kubernetes uses services to expose applications running in pods.
+- Kubernetes uses deployments to create and manage pods.
+- Kubernetes uses replica sets to create and manage pods.
+- Kubernetes uses jobs to run tasks to completion.
+- Kubernetes uses cron jobs to run jobs at a specific time or interval.
+
+
 ![Kubernetes Architecture](https://github.com/islamsamy214/learning-kubernetes/blob/master/kubernetes-arch.png?raw=true)
 
 ## Install docker
