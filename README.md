@@ -17,7 +17,7 @@
     - kubelet: It is responsible for communication between the master node and the worker nodes.
     - kube-proxy: It is responsible for maintaining the network rules.
     - Container Runtime: It is responsible for running the containers.
-![Kubernetes Architecture](https://github.com/islamsamy214/learning-kubernetes/blob/master/kubernetes-arch.png
+![Kubernetes Architecture](https://github.com/islamsamy214/learning-kubernetes/blob/master/kubernetes-arch.png?raw=true)
 
 ## Install docker
 `` sudo apt-get install -y docker.io ``
