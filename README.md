@@ -209,3 +209,21 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A service can be accessed through a command: `` kubectl get service <service-name> `` or `` kubectl get svc <service-name> ``
 - A service can be accessed through a command: `` kubectl describe service <service-name> `` or `` kubectl describe svc <service-name> ``
 - A service can be accessed through a command: `` kubectl get endpoints <service-name> `` or `` kubectl get ep <service-name> ``
+
+### Environment Variables
+- Environment variables can be added to a pod through a yaml file: `` kubectl apply -f pod.yaml ``
+- Environment variables can be added to a pod through a command: `` kubectl set env pod <pod-name> <key>=<value> ``
+- Environment variables can be removed from a pod through a command: `` kubectl set env pod <pod-name> <key>- ``
+- Environment variables can be accessed through a command: `` kubectl exec -it <pod-name> -- env ``
+- Environment variables can be accessed through a command: `` kubectl exec -it <pod-name> -- printenv ``
+- Environment variables can be accessed through a command: `` kubectl exec -it <pod-name> -- env | grep <key> ``
+
+### Config Maps
+- A config map is used to store configuration data in key-value pairs.
+- A config map can be created or updated through a yaml file: `` kubectl apply -f configmap.yaml ``
+- A config map can be created or updated through a command: `` kubectl create configmap <configmap-name> --from-literal=<key>=<value> ``
+- A config map can be created or updated through a command: `` kubectl create configmap <configmap-name> --from-file=<path> ``
+- A config map can be deleted through a command: `` kubectl delete configmap <configmap-name> ``
+- A config map can be accessed through a command: `` kubectl get configmap <configmap-name> ``
+- A config map can be detailed through a command: `` kubectl describe configmap <configmap-name> ``
+- A config map can be generated through a command: `` kubectl create configmap <configmap-name> --from-literal=<key>=<value> --dry-run=client -o yaml > configmap.yaml ``
