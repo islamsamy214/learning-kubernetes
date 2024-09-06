@@ -227,3 +227,15 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A config map can be accessed through a command: `` kubectl get configmap <configmap-name> ``
 - A config map can be detailed through a command: `` kubectl describe configmap <configmap-name> ``
 - A config map can be generated through a command: `` kubectl create configmap <configmap-name> --from-literal=<key>=<value> --dry-run=client -o yaml > configmap.yaml ``
+
+### Secrets
+- A secret is used to store sensitive data in key-value pairs.
+- A secret can be created or updated through a yaml file: `` kubectl apply -f secret.yaml ``
+- A secret can be created or updated through a command: `` kubectl create secret generic <secret-name> --from-literal=<key>=<value> `` or `` kubectl create secret generic <secret-name> --from-file=<path> ``
+- A secret can be deleted through a command: `` kubectl delete secret <secret-name> ``
+- A secret can be accessed through a command: `` kubectl get secret <secret-name> ``
+- A secret can be detailed through a command: `` kubectl describe secret <secret-name> ``
+- A secret can be generated through a command: `` kubectl create secret generic <secret-name> --from-literal=<key>=<value> --dry-run=client -o yaml > secret.yaml ``
+- A secret can be encoded through a command: `` echo -n '<value>' | base64 ``
+- A secret can be decoded through a command: `` echo -n '<value>' | base64 --decode ``
+- A secret can be accessed through a command: `` kubectl get secret <secret-name> -o yaml `` then `` echo -n '<value>' | base64 --decode ``
