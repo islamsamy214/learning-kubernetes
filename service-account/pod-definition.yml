@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: ubuntu
+  name: ubuntu
+spec:
+  containers:
+  - image: ubuntu
+    name: ubuntu
+    resources: {}
+    # try with and without and check the used token in the pod description
+  serviceAccount: dashboard-sa
+  automountServiceAccountToken: false
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
