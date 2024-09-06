@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: ubuntu
+  name: ubuntu
+spec:
+  containers:
+    - image: ubuntu
+      name: ubuntu
+      command: ["/bin/sh", "-c"]
+      args: ["whoami && groups && sleep 60"]
+      # try it with this and with out and check the logs
+      securityContext:
+        runAsUser: 1000
+        capabilities:
+          add: ['MAC_ADMIN']
+      resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
