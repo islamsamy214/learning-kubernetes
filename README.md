@@ -239,3 +239,12 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A secret can be encoded through a command: `` echo -n '<value>' | base64 ``
 - A secret can be decoded through a command: `` echo -n '<value>' | base64 --decode ``
 - A secret can be accessed through a command: `` kubectl get secret <secret-name> -o yaml `` then `` echo -n '<value>' | base64 --decode ``
+
+### service account
+- A service account is used to authenticate and authorize pods to access the Kubernetes API.
+- A service account can be created or updated through a yaml file: `` kubectl apply -f serviceaccount.yaml ``
+- A service account can be created or updated through a command: `` kubectl create serviceaccount <serviceaccount-name> ``
+- A service account can be deleted through a command: `` kubectl delete serviceaccount <serviceaccount-name> ``
+- A service account can be accessed through a command: `` kubectl get serviceaccount <serviceaccount-name> ``
+- A service account can be detailed through a command: `` kubectl describe serviceaccount <serviceaccount-name> ``
+- A service account can be accessed through a command: `` kubectl get serviceaccount <serviceaccount-name> -o yaml ``
