@@ -248,3 +248,12 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A service account can be accessed through a command: `` kubectl get serviceaccount <serviceaccount-name> ``
 - A service account can be detailed through a command: `` kubectl describe serviceaccount <serviceaccount-name> ``
 - A service account can be accessed through a command: `` kubectl get serviceaccount <serviceaccount-name> -o yaml ``
+
+### Requirements and Limits
+- Requirements and limits are used to specify the amount of resources that a pod can use.
+- Requirements and limits can be added to a pod through a yaml file: `` kubectl apply -f pod.yaml ``
+- Requirements and limits can be added to a pod through a command: `` kubectl set resources pod <pod-name> --requests=<key>=<value> --limits=<key>=<value> ``
+- Requirements and limits can be removed from a pod through a command: `` kubectl set resources pod <pod-name> --requests=<key>- --limits=<key>- ``
+- Requirements and limits can be accessed through a command: `` kubectl describe pod <pod-name> ``
+- Requirements and limits can be accessed through a command: `` kubectl get pod <pod-name> -o yaml ``
+- Requirements and limits can be accessed through a command: `` kubectl top pod <pod-name> ``
