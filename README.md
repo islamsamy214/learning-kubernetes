@@ -257,3 +257,19 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - Requirements and limits can be accessed through a command: `` kubectl describe pod <pod-name> ``
 - Requirements and limits can be accessed through a command: `` kubectl get pod <pod-name> -o yaml ``
 - Requirements and limits can be accessed through a command: `` kubectl top pod <pod-name> ``
+
+### Taints
+- A taint is used to repel pods from a node.
+- A taint can be added to a node through a command: `` kubectl taint node <node-name> <key>=<value>:<effect> ``
+- A taint can be removed from a node through a command: `` kubectl taint node <node-name> <key>- ``
+- A taint can be accessed through a command: `` kubectl describe node <node-name> ``
+- A taint can be accessed through a command: `` kubectl get node <node-name> -o yaml ``
+
+### Tolerations
+- A toleration is used to allow pods to tolerate taints on a node.
+- A toleration can be added to a pod through a yaml file: `` kubectl apply -f pod.yaml ``
+- A toleration can be added to a pod through a command: `` kubectl set tolerations pod <pod-name> <key>=<value>:<effect> ``
+- A toleration can be removed from a pod through a command: `` kubectl set tolerations pod <pod-name> <key>- ``
+- A toleration can be accessed through a command: `` kubectl describe pod <pod-name> ``
+- A toleration can be accessed through a command: `` kubectl get pod <pod-name> -o yaml ``
+
