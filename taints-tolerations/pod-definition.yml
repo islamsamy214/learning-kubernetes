@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: ubuntu
+  name: ubuntu
+spec:
+  containers:
+  - image: ubuntu
+    name: ubuntu
+    resources: {}
+  tolerations:
+  - effect: NoSchedule
+    key: spray
+    operator: Equal
+    value: mortein
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
