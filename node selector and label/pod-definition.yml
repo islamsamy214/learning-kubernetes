@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+  # this is the regular label we know
+  labels:
+    name: ubuntu
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  # this is the node selector difinition
+  nodeSelector: 
+    size: LargeOrWhatEver

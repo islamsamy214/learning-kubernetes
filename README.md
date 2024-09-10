@@ -273,3 +273,17 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A toleration can be accessed through a command: `` kubectl describe pod <pod-name> ``
 - A toleration can be accessed through a command: `` kubectl get pod <pod-name> -o yaml ``
 
+### Node Selector
+- A node selector is used to select nodes for a pod.
+- A node selector can be added to a pod through a yaml file: `` kubectl apply -f pod.yaml ``
+- A node selector can be added to a pod through a command: `` kubectl set node selector pod <pod-name> <key>=<value> ``
+- A node selector can be removed from a pod through a command: `` kubectl set node selector pod <pod-name> <key>- ``
+- A node selector can be accessed through a command: `` kubectl describe pod <pod-name> ``
+- A node selector can be accessed through a command: `` kubectl get pod <pod-name> -o yaml ``
+
+### Node Label
+- A node label is used to add labels to a node.
+- A node label can be added to a node through a command: `` kubectl label node <node-name> <key>=<value> ``
+- A node label can be removed from a node through a command: `` kubectl label node <node-name> <key>- ``
+- A node label can be accessed through a command: `` kubectl describe node <node-name> ``
+- A node label can be accessed through a command: `` kubectl get node <node-name> -o yaml ``
