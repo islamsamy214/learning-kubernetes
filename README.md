@@ -287,3 +287,11 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A node label can be removed from a node through a command: `` kubectl label node <node-name> <key>- ``
 - A node label can be accessed through a command: `` kubectl describe node <node-name> ``
 - A node label can be accessed through a command: `` kubectl get node <node-name> -o yaml ``
+
+### Node Affinity
+- A node affinity is used to specify the nodes that a pod can be scheduled on.
+- A node affinity is the same as a node selector but with more options so it more complicated.
+- A node affinity can be added to a pod through a yaml file: `` kubectl apply -f pod.yaml ``
+- A node affinity can be added to a pod through a command: `` kubectl set node affinity pod <pod-name> <key>=<value> ``
+- A node affinity can be removed from a pod through a command: `` kubectl set node affinity pod <pod-name> <key>- ``
+- A node affinity can be accessed through a command: `` kubectl describe pod <pod-name> ``
