@@ -335,3 +335,12 @@ is a single node cluster that runs on a virtual machine on your local machine an
   - if we used the node affinity or selector with the red pod and the red node only, the other pod might be scheduled on the red node.
   - if we used the toleration with the red pod and the red node only, the red pod might be scheduled on the other node.
   - if we used the node affinity or selector and the toleration with the taints, we will make sure that the red pod will be scheduled on the red node, and the other pod will be scheduled on the other node.
+
+
+### Multi-Container Pods
+- A multi-container pod is used to run multiple containers in a single pod that share the same resources.
+- A multi-container pod can be created or updated through a yaml file: `kubectl apply -f pod.yaml`
+- A multi-container pod can be deleted through a command: `kubectl delete pod <pod-name>`
+- A multi-container pod can be accessed through a command: `kubectl get pod <pod-name>`
+- A multi-container pod can be detailed through a command: `kubectl describe pod <pod-name>`
+- A multi-container pod can be accessed through a command: `kubectl exec -it <pod-name> --container=<container-name> -- command`
