@@ -80,6 +80,7 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A node can be deleted through a command: `kubectl delete node <node-name>`
 - A node can be accessed through a command: `kubectl get node <node-name>`
 - A node can be detailed accessed through a command: `kubectl describe node <node-name>`
+- A node consumption can be accessed through a command: `kubectl top node <node-name>`
 - A node can be accessed through a service.
 
 ### Pods
@@ -336,7 +337,6 @@ is a single node cluster that runs on a virtual machine on your local machine an
   - if we used the toleration with the red pod and the red node only, the red pod might be scheduled on the other node.
   - if we used the node affinity or selector and the toleration with the taints, we will make sure that the red pod will be scheduled on the red node, and the other pod will be scheduled on the other node.
 
-
 ### Multi-Container Pods
 - A multi-container pod is used to run multiple containers in a single pod that share the same resources.
 - A multi-container pod can be created or updated through a yaml file: `kubectl apply -f pod.yaml`
@@ -344,3 +344,26 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A multi-container pod can be accessed through a command: `kubectl get pod <pod-name>`
 - A multi-container pod can be detailed through a command: `kubectl describe pod <pod-name>`
 - A multi-container pod can be accessed through a command: `kubectl exec -it <pod-name> --container=<container-name> -- command`
+
+### Readiness Probes
+- A readiness probe is used to check if a pod is ready to serve traffic.
+- A readiness probe can be added to a pod through a yaml file: `kubectl apply -f pod.yaml`
+- A readiness probe can be added to a pod through a command: `kubectl set readiness pod <pod-name> <key>=<value>`
+- A readiness probe can be removed from a pod through a command: `kubectl set readiness pod <pod-name> <key>-`
+- A readiness probe can be accessed through a command: `kubectl describe pod <pod-name>`
+- A readiness probe can be accessed through a command: `kubectl get pod <pod-name> -o yaml`
+
+### Liveness Probes
+- A liveness probe is used to check if a pod is alive and restart it if it is not.
+- A liveness probe can be added to a pod through a yaml file: `kubectl apply -f pod.yaml`
+- A liveness probe can be added to a pod through a command: `kubectl set liveness pod <pod-name> <key>=<value>`
+- A liveness probe can be removed from a pod through a command: `kubectl set liveness pod <pod-name> <key>-`
+- A liveness probe can be accessed through a command: `kubectl describe pod <pod-name>`
+- A liveness probe can be accessed through a command: `kubectl get pod <pod-name> -o yaml`
+
+### Logging
+- Logging is used to monitor the logs of a pod.
+- Logging can be accessed through a command: `kubectl logs <pod-name>`  
+- Logging can be accessed through a command: `kubectl logs <pod-name> --container=<container-name>` or `kubectl logs <pod-name> -c <container-name>`
+- Logging can be accessed through a command: `kubectl logs <pod-name> --follow` or `kubectl logs <pod-name> -f`
+
