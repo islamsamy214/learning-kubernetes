@@ -222,6 +222,9 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - ClusterIP: It is used to expose a service on a cluster-internal IP.
 - LoadBalancer: It is used to expose a service externally using a cloud provider's load balancer.
 
+#### Difference between a node port, and a load balancer is that: 
+a node port is used to expose a service on a specific port on each node, while a load balancer is used to expose a service externally using a cloud provider's load balancer, so you have to know each node port to access the service, but with the load balancer you can access the service through a single IP address.
+
 ### Services
 
 - A service is used to expose an application running in a pod.
@@ -232,6 +235,19 @@ is a single node cluster that runs on a virtual machine on your local machine an
 - A service can be accessed through a command: `kubectl get service <service-name>` or `kubectl get svc <service-name>`
 - A service can be accessed through a command: `kubectl describe service <service-name>` or `kubectl describe svc <service-name>`
 - A service can be accessed through a command: `kubectl get endpoints <service-name>` or `kubectl get ep <service-name>`
+
+### Ingress
+- An ingress is used to expose an application running in a pod to the outside world.
+- An ingress can be created or updated through a yaml file: `kubectl apply -f ingress.yaml`
+- An ingress can be deleted through a command: `kubectl delete ingress <ingress-name>`
+- An ingress can be accessed through a command: `kubectl get ingress <ingress-name>`
+- An ingress can be detailed through a command: `kubectl describe ingress <ingress-name>`
+- An ingress can be accessed through a command: `kubectl get ingress <ingress-name> -o yaml`
+  #### Note: 
+    - An ingress controller is used to manage the ingress resources in a cluster, through a controller like Nginx, Traefik, or HAProxy.
+    - An ingress rule is used to define the routing rules for the ingress controller, through a rule like a path, a host, or a service.
+    - Ingress servicePort: 80 should match the Service's port: 80
+    - nodePort: 30080 is used when accessing the service externally via node IPs and is not used by the Ingress, so you can comment it out.
 
 ### Environment Variables
 

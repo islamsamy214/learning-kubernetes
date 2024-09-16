@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontend-deployment
+  ports:
+  - port: 80
+    targetPort: 80
+    name: frontend-svc
+    # nodePort: 30080 # since you will be using ingress, you would not need this nodePort!
