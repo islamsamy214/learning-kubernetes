@@ -33,6 +33,7 @@ spec:
           port: 6379
   egress:
     - to:
+        # U can specfiy specific subnet or even specific ip /32
         - ipBlock:
             cidr: 10.0.0.0/24
       ports:
