@@ -10,16 +10,21 @@ spec:
       role: db
   policyTypes:
     - Ingress
+    # if u didnt define egress it will automatically allowed for the incoming ingress
     - Egress
   ingress:
     - from:
+        # NOTE: "-" "-" means OR, but "-" then " " means AND, because the parent accepts an array
+        # this specifies which ips are allowed and which are not
         - ipBlock:
             cidr: 172.17.0.0/16
             except:
               - 172.17.1.0/24
+        # it helps to define from what namespace traffic is allowed
         - namespaceSelector:
             matchLabels:
               project: myproject
+        # if u didnt define this, it will allow all the traffic from any pod in the namespace, so this tells which pod is allowed to access
         - podSelector:
             matchLabels:
               role: frontend
