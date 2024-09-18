@@ -383,3 +383,11 @@ a node port is used to expose a service on a specific port on each node, while a
 - Logging can be accessed through a command: `kubectl logs <pod-name> --container=<container-name>` or `kubectl logs <pod-name> -c <container-name>`
 - Logging can be accessed through a command: `kubectl logs <pod-name> --follow` or `kubectl logs <pod-name> -f`
 
+### Network Policies
+- A network policy is used to control the traffic between pods.
+- A network policy can be created or updated through a yaml file: `kubectl apply -f networkpolicy.yaml`
+- A network policy can be deleted through a command: `kubectl delete networkpolicy <networkpolicy-name>`
+- A network policy can be accessed through a command: `kubectl get networkpolicy <networkpolicy-name>`
+- A network policy can be detailed through a command: `kubectl describe networkpolicy <networkpolicy-name>`
+- A network policy can be accessed through a command: `kubectl get networkpolicy <networkpolicy-name> -o yaml`
+#### Note: Solutions supports network policies such as Kube-router, Calico, Romana, Calico, Cilium, and Weave Net, So you have to install one of them to use network policies, and for the solutions that do not support network policies such as Flannel, you can use the network policies through the network plugin such as CNI.
