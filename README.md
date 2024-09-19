@@ -391,3 +391,27 @@ a node port is used to expose a service on a specific port on each node, while a
 - A network policy can be detailed through a command: `kubectl describe networkpolicy <networkpolicy-name>`
 - A network policy can be accessed through a command: `kubectl get networkpolicy <networkpolicy-name> -o yaml`
 #### Note: Solutions supports network policies such as Kube-router, Calico, Romana, Calico, Cilium, and Weave Net, So you have to install one of them to use network policies, and for the solutions that do not support network policies such as Flannel, you can use the network policies through the network plugin such as CNI.
+
+### Volumes
+- A volume is used to store data in a pod.
+- A volume can be added to a pod through a yaml file: `kubectl apply -f pod.yaml`
+- A volume can be added to a pod through a command: `kubectl set volume pod <pod-name> <key>=<value>`
+- A volume can be removed from a pod through a command: `kubectl set volume pod <pod-name> <key>-`
+- A volume can be accessed through a command: `kubectl describe pod <pod-name>`
+- A volume can be accessed through a command: `kubectl get pod <pod-name> -o yaml`
+
+### Persistent Volumes
+- A persistent volume is used to store data in a pod.
+- A persistent volume can be created or updated through a yaml file: `kubectl apply -f persistentvolume.yaml`
+- A persistent volume can be deleted through a command: `kubectl delete persistentvolume <persistentvolume-name>`
+- A persistent volume can be accessed through a command: `kubectl get persistentvolume <persistentvolume-name>`
+- A persistent volume can be detailed through a command: `kubectl describe persistentvolume <persistentvolume-name>`
+- A persistent volume can be accessed through a command: `kubectl get persistentvolume <persistentvolume-name> -o yaml`
+
+### Persistent Volume Claims
+- A persistent volume claim is used to request a persistent volume.
+- A persistent volume claim can be created or updated through a yaml file: `kubectl apply -f persistentvolumeclaim.yaml`
+- A persistent volume claim can be deleted through a command: `kubectl delete persistentvolumeclaim <persistentvolumeclaim-name>`
+- A persistent volume claim can be accessed through a command: `kubectl get persistentvolumeclaim <persistentvolumeclaim-name>`
+- A persistent volume claim can be detailed through a command: `kubectl describe persistentvolumeclaim <persistentvolumeclaim-name>`
+- A persistent volume claim can be accessed through a command: `kubectl get persistentvolumeclaim <persistentvolumeclaim-name> -o yaml`
