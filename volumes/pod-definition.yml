@@ -1,20 +1,22 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: configmap-pod
+  name: hostpath-example-linux
 spec:
+  os: { name: linux }
+  nodeSelector:
+    kubernetes.io/os: linux
   containers:
-    - name: test
-      image: busybox:1.28
-      command: ["sh", "-c", 'echo "The app is running!" && tail -f /dev/null']
-      resources: {}
-      volumeMounts:
-        - name: config-vol
-          mountPath: /etc/config
+  - name: example-container
+    image: registry.k8s.io/test-webserver
+    resources: {}
+    volumeMounts:
+    - mountPath: /foo
+      name: example-volume
+      readOnly: true
   volumes:
-    - name: config-vol
-      configMap:
-        name: log-config
-        items:
-          - key: log_level
-            path: log_level
+  - name: example-volume
+    # mount /data/foo, but only if that directory already exists
+    hostPath:
+      path: /data/foo # directory location on host
+      type: Directory # this field is optional
