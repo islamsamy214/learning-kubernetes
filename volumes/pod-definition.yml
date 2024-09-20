@@ -1,22 +1,23 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hostpath-example-linux
+  name: ubuntu
+  labels:
+    name: ubuntu
 spec:
-  os: { name: linux }
-  nodeSelector:
-    kubernetes.io/os: linux
   containers:
-  - name: example-container
-    image: registry.k8s.io/test-webserver
-    resources: {}
-    volumeMounts:
-    - mountPath: /foo
-      name: example-volume
-      readOnly: true
-  volumes:
-  - name: example-volume
-    # mount /data/foo, but only if that directory already exists
-    hostPath:
-      path: /data/foo # directory location on host
-      type: Directory # this field is optional
+  - name: ubuntu
+    image: ubuntu
+    command: ["/bin/sh", "-c"]
+    args: ["echo 'sleeping for 10 seconds' && sleep 10"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts: 
+    - mountPath: /tmp
+      name: temp-files
+  volumes: 
+  - name: temp-files
+    persistentVolumeClaim:
+      claimName: mypvc
