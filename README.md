@@ -415,3 +415,19 @@ a node port is used to expose a service on a specific port on each node, while a
 - A persistent volume claim can be accessed through a command: `kubectl get persistentvolumeclaim <persistentvolumeclaim-name>`
 - A persistent volume claim can be detailed through a command: `kubectl describe persistentvolumeclaim <persistentvolumeclaim-name>`
 - A persistent volume claim can be accessed through a command: `kubectl get persistentvolumeclaim <persistentvolumeclaim-name> -o yaml`
+
+### Storage Classes
+- A storage class is used to define the type of storage that a persistent volume uses.
+- A storage class can be created or updated through a yaml file: `kubectl apply -f storageclass.yaml`
+- A storage class can be deleted through a command: `kubectl delete storageclass <storageclass-name>`
+- A storage class can be accessed through a command: `kubectl get storageclass <storageclass-name>`
+- A storage class can be detailed through a command: `kubectl describe storageclass <storageclass-name>`
+- A storage class can be accessed through a command: `kubectl get storageclass <storageclass-name> -o yaml`
+
+### Stateful Sets
+- A stateful set is used to manage stateful applications, that require stable and unique network identifiers, persistent storage, and ordered deployment, so when you delete a pod, it will be recreated with the same name.
+- A stateful set can be created or updated through a yaml file: `kubectl apply -f statefulset.yaml`
+- A stateful set can be deleted through a command: `kubectl delete statefulset <statefulset-name>`
+- A stateful set can be accessed through a command: `kubectl get statefulset <statefulset-name>`
+- A stateful set can be detailed through a command: `kubectl describe statefulset <statefulset-name>`
+- A stateful set can be accessed through a command: `kubectl get statefulset <statefulset-name> -o yaml`

@@ -10,5 +10,7 @@ spec:
     requests:
       storage: 2Gi
   volumeMode: Filesystem
+  # u can define a specific storage class
+  storageClassName: mysc
   accessModes:
     - ReadWriteOnce
