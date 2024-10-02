@@ -431,3 +431,12 @@ a node port is used to expose a service on a specific port on each node, while a
 - A stateful set can be accessed through a command: `kubectl get statefulset <statefulset-name>`
 - A stateful set can be detailed through a command: `kubectl describe statefulset <statefulset-name>`
 - A stateful set can be accessed through a command: `kubectl get statefulset <statefulset-name> -o yaml`
+
+### Headless Services
+- A headless service is used to access the pods directly without a load balancer.
+- This is usually used with a stateful set to access the pods directly, to get the unique network identifiers, just to make sure that you are accessing the right pod.
+- A headless service can be created or updated through a yaml file: `kubectl apply -f service.yaml`
+- A headless service can be deleted through a command: `kubectl delete service <service-name>`
+- A headless service can be accessed through a command: `kubectl get service <service-name>`
+- A headless service can be detailed through a command: `kubectl describe service <service-name>`
+- A headless service can be accessed through a command: `kubectl get service <service-name> -o yaml`
