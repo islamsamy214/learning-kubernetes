@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-h 
+  # in case of pods only, must be in the subdomain section, BTW it doesnt work with Deployment "logically", but it does with stateful set, and simply add it to serviceName section
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 3306
+  clusterIP: None

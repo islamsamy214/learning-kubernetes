@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mystatefulset
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  serviceName: mysql-h # in here u add the headless service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: mysql
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
