@@ -432,6 +432,11 @@ a node port is used to expose a service on a specific port on each node, while a
 - A stateful set can be detailed through a command: `kubectl describe statefulset <statefulset-name>`
 - A stateful set can be accessed through a command: `kubectl get statefulset <statefulset-name> -o yaml`
 
+### Dynamic Provisioning
+- Dynamic provisioning is used to automatically create a persistent volume when a persistent volume claim is created.
+- So if you have a stateful application that requires persistent storage, you can use dynamic provisioning to automatically create a persistent volume when a persistent volume claim is created, by that each pod will have its own persistent volume automatically.
+- When a pod is down and coming up again, it will have the same persistent volume, so it will have the same data without losing it.
+
 ### Headless Services
 - A headless service is used to access the pods directly without a load balancer.
 - This is usually used with a stateful set to access the pods directly, to get the unique network identifiers, just to make sure that you are accessing the right pod.

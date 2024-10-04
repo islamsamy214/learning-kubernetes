@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+# stateful set is the same as Deployment but change it to StatefulSet then u have to definine the service name
+kind: StatefulSet
+metadata:
+  name: demo-deployment-app
+  labels:
+    app: demo-app
+spec:
+  serviceName: nginx-svc
+  selector:
+    matchLabels:
+      app: demo-app
+  replicas: 3
+  template:
+    # nginx pods defenitions
+    metadata:
+      name: nginx
+      labels:
+        app: demo-app
+        type: front-end
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+          - mountPath: /var/www/http
+            name: data-volume
+            # untill here u are using the same pvc for all pods "u shall been created it!"
+  volumeClaimTemplates:
+    - metadata:
+        name: data-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: google-storage
+        resources:
+          requests:
+            storage: 500Mi
