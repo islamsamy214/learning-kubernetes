@@ -1,4 +1,41 @@
-# Learning Kubernetes
+# About this repo
+
+This repo is a collection of notes and examples that I have created while learning Kubernetes. It covers the basic concepts of Kubernetes, such as pods, deployments, services, and ingress, as well as more advanced topics such as jobs, cron jobs, and network policies. It also includes examples of how to use kubectl commands to interact with the Kubernetes cluster.
+
+- [Kubernetes Commands and Concepts](#kubernetes-commands-and-concepts)
+- [Architecture](#architecture)
+- [Install docker](#install-docker)
+- [minikube](#minikube)
+- [Requirements and Limits](#requirements-and-limits)
+- [Labels and Selectors](#labels-and-selectors)
+- [Annotations](#annotations)
+- [Namespaces](#namespaces)
+- [Replica Sets](#replica-sets)
+- [Deployments](#deployments)
+- [Services](#services)
+- [Ingress](#ingress)
+- [Environment Variables](#environment-variables)
+- [Config Maps](#config-maps)
+- [Secrets](#secrets)
+- [service account](#service-account)
+- [Requirements and Limits](#requirements-and-limits)
+- [Taints](#taints)
+- [Tolerations](#tolerations)
+- [Node Selector](#node-selector)
+- [Node Label](#node-label)
+- [Node Affinity](#node-affinity)
+- [Multi-Container Pods](#multi-container-pods)
+- [Readiness Probes](#readiness-probes)
+- [Liveness Probes](#liveness-probes)
+- [Logging](#logging)
+- [Network Policies](#network-policies)
+- [Volumes](#volumes)
+- [Persistent Volumes](#persistent-volumes)
+- [Persistent Volume Claims](#persistent-volume-claims)
+- [Storage Classes](#storage-classes)
+- [Stateful Sets](#stateful-sets)
+- [Dynamic Provisioning](#dynamic-provisioning)
+- [Headless Services](#headless-services)
 
 ## Install kubectl
 
